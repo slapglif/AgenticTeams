@@ -1,4 +1,4 @@
-# Anuna Agentic Teams
+# Agentic Teams
 
 A sophisticated research automation system that leverages specialized AI agents to conduct in-depth research and analysis through Discord. The system uses LangChain, Pydantic, and a state-of-the-art agent architecture to perform complex research tasks.
 
