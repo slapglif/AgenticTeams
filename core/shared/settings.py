@@ -16,11 +16,11 @@ API_BASE: str = ""
 
 COOLDOWN_TIME: int = 1
 TERMINATE_KEYWORD: str = "TERMINATE"
-SEARX_HOST: str = os.getenv("SEARX_HOST", "https://searchapi.anuina.dev")
+SEARX_HOST: str = os.getenv("SEARX_HOST", "")
 TAVILY_API_KEY: str = os.getenv("TAVILY_API_KEY", "")  # Add your Tavily API key to environment variables
 # Bot personas configuration
 
-MEM0_KEY: str = os.getenv("MEM0_API_KEY", "m0-xl3UnM56gWJl2S6io79nHcHi2IMba0evMdAM5Fwj")
+MEM0_KEY: str = os.getenv("MEM0_API_KEY", "")
 
 # Use environment variables directly
 DATABASE_URI: Optional[str] = os.getenv("DATABASE_URI")
@@ -102,10 +102,6 @@ BENCHMARK_METRICS: Dict[str, bool] = {
 
 # API key rotation settings
 GOOGLE_API_KEYS = [
-    "AIzaSyA_5-fcCihRyNZvfl6S5wm420SnuvijQT0",
-    "AIzaSyBArONn-OrSZga-0W8aqgiTz-1Vh7RRnIM",
-    "AIzaSyBbhgdQ9TgAksv2ClEaUcx66mwhaYeQ2TU",
-    "AIzaSyAWFaA8riNs3u6G9mkWDFw126Z6xTYXSW0"
 ]
 
 GEMINI_MODELS = [
