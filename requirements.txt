@@ -1,0 +1,16 @@
+web3==6.11.3
+eth-account==0.8.0
+py-solc-x==2.0.2
+eth-tester==0.9.1b1
+eth-typing==3.5.1
+eth-utils==2.3.1
+hexbytes==0.3.1
+beautifulsoup4==4.12.3
+aiohttp==3.9.1
+langchain-core==0.1.12
+langchain-community==0.0.13
+loguru>=0.7.2
+langgraph>=0.0.15
+rich>=13.7.0
+pydantic>=2.5.3
+langchain>=0.1.0 
