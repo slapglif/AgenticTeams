@@ -11,7 +11,7 @@ from langchain_ollama.embeddings import OllamaEmbeddings
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 from langsmith import Client
 
-API_BASE: str = "http://api.anuna.dev"
+API_BASE: str = ""
 # Load environment variables (make sure to create a .env file with these variables)
 
 COOLDOWN_TIME: int = 1
@@ -43,7 +43,6 @@ SEARCH_RESULTS_NUM: int = int(os.getenv("SEARCH_RESULTS_NUM", "1000"))
 MAX_ITERATIONS: int = int(os.getenv("MAX_ITERATIONS", "1000"))
 
 
-ANUNA_BASE: str = os.getenv("ANUNA_BASE", "https://api.anuna.dev")
 EMBEDDING_MODEL_OLLAMA: str = os.getenv("EMBEDDING_MODEL_OLLAMA", "bge-m3")
 EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "nomic-ai/nomic-embed-text-v1.5")
 
@@ -57,9 +56,9 @@ CSV_FOLDER_PATH: str = "C:\\Users\\Melody\\work\\datas"
 PERSIST_DIRECTORY: str = os.getenv("PERSIST_DIRECTORY", "chroma_db")
 
 # Agent Ops Configuration
-LANGSMITH_API_KEY: str = os.getenv("LANGSMITH_API_KEY", "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")
-LANGSMITH_PROJECT_NAME: str = os.getenv("LANGSMITH_PROJECT_NAME", "AnunaAgentApp")
-LANGSMITH_TAGS: list[str] = ["anuna_agent_app", "production", "agent_research", "deep_exploration"]
+LANGSMITH_API_KEY: str = os.getenv("LANGSMITH_API_KEY", "")
+LANGSMITH_PROJECT_NAME: str = os.getenv("LANGSMITH_PROJECT_NAME", "AgentApp")
+LANGSMITH_TAGS: list[str] = ["agent_app", "production", "agent_research", "deep_exploration"]
 
 # Initialize LangSmith client for global use
 try:
@@ -167,7 +166,7 @@ def build_embeddings(provider: str = "ollama", **kwargs: Any) -> Union[GoogleGen
         )
     else:  # Default to Ollama embeddings
         _embeddings = OllamaEmbeddings(
-            base_url=ANUNA_BASE,
+            base_url=API_BASE,
             model=os.getenv("EMBEDDING_MODEL_OLLAMA", EMBEDDING_MODEL_OLLAMA),
             **kwargs,
         )
@@ -222,7 +221,7 @@ def build_llm(output_mode: str = '', provider="google", **kwargs):
             kwargs["num_ctx"] = int(os.getenv("OLLAMA_NUM_CTX", 14000))
             
         if "base_url" not in kwargs:
-            kwargs["base_url"] = ANUNA_BASE
+            kwargs["base_url"] = API_BASE
         
         # For Ollama, we use format='json' for JSON output
         if output_mode:

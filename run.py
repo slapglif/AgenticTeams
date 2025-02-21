@@ -128,8 +128,8 @@ redis_history = RedisChatMessageHistory(session_id="research_bot", url="redis://
 # Initialize LangSmith client with error handling and positional arguments
 try:
     # Initialize LangSmith client first
-    client = Client(api_key="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")
-    tracer = LangChainTracer(project_name="AnunaAgentApp", client=client)
+    client = Client(api_key="")
+    tracer = LangChainTracer(project_name="AgentApp", client=client)
     logger.info("LangSmith tracer initialized successfully.")
 except Exception as e:
     logger.warning(f"Failed to initialize LangSmith tracer: {e}")

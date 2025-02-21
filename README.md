@@ -116,8 +116,6 @@ The system uses a sophisticated architecture with several key components:
 ## Notes
 
 - All prompt templates use Pydantic output parsers with format='json'
-- Non-variable brackets in prompt templates are escaped with {{ }}
-- Variables in prompt templates use {format_instructions} format
 - The system uses LangChain for agent interactions and tool execution
 - Rich logging provides detailed execution information
 - Blockchain integration is optional but provides additional capabilities

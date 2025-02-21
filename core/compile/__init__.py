@@ -54,7 +54,7 @@ from .graph.scheduler import (
 )
 
 __version__ = "0.1.0"
-__author__ = "Anuna"
+__author__ = "Michael Brown"
 __all__ = [
     # Main compiler
     "LangGraphCompiler",
